@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(grep -E \"\\(html|css|js\\)$\")",
+      "Bash(npx --yes serve -p 3005 -s .)",
+      "Bash(npx serve *)",
+      "Bash(Select-String -Path styles.css -Pattern \"nav-logo|nav-plaque|max-width: 580|max-width: 859\")",
+      "Bash(Select-Object -First 20)"
+    ]
+  }
+}
