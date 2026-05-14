@@ -1,190 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miguel Ángel Urrutia – Digital Card</title>
-
-  <style>
-    :root {
-      --black: #050505;
-      --black-soft: #111111;
-      --gold: #d4af37;
-      --gold-light: #f5d978;
-      --gold-dark: #8a6f1d;
-      --text-muted: #c9b56a;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.18), transparent 32%),
-        linear-gradient(160deg, #000000, #111111 52%, #050505);
-      font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
-      color: var(--gold);
-    }
-
-    .card {
-      width: 360px;
-      max-width: 100%;
-      padding: 28px 22px 22px;
-      border-radius: 24px;
-      text-align: center;
-      background: linear-gradient(180deg, #111111, #050505);
-      border: 1px solid rgba(212, 175, 55, 0.48);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.72), 0 0 34px rgba(212, 175, 55, 0.12);
-    }
-
-    .profile-photo {
-      width: 158px;
-      height: 158px;
-      object-fit: cover;
-      display: block;
-      margin: 6px auto 18px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.12), 0 16px 30px rgba(0, 0, 0, 0.45);
-      background: #000;
-    }
-
-    h1 {
-      margin: 6px 0 8px;
-      font-size: 30px;
-      line-height: 1.12;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: var(--gold-light);
-      text-shadow: 0 2px 12px rgba(212, 175, 55, 0.22);
-    }
-
-    .subtitle {
-      margin: 0 0 22px;
-      font-size: 15px;
-      color: var(--text-muted);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 86%;
-      margin: 10px auto;
-      padding: 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.4px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.18);
-    }
-
-    .btn img {
-      height: 20px;
-      width: auto;
-    }
-
-    .icon-wide {
-      width: 22px;
-      height: auto;
-    }
-
-    .save,
-    .call,
-    .email,
-    .linkedin {
-      background: #080808;
-      color: var(--gold-light);
-      border: 1px solid rgba(212, 175, 55, 0.72);
-    }
-
-    .whatsapp {
-      background: linear-gradient(135deg, #075e54, #128c7e);
-      color: #fff7d6;
-      border: 1px solid rgba(245, 217, 120, 0.72);
-    }
-
-    .footer {
-      margin-top: 18px;
-      font-size: 12px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: rgba(212, 175, 55, 0.68);
-    }
-
-    .footer a {
-      color: rgba(245, 217, 120, 0.78);
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="card">
-
-    <!-- Random Profile Photo -->
-    <img id="profilePhoto" src="MAU.png" alt="Miguel Ángel Urrutia" class="profile-photo" />
-
-    <h1>Miguel Ángel Urrutia</h1>
-    <div class="subtitle">Miguel Ángel’s Profile</div>
-
-    <!-- Save Contact -->
-    <a class="btn save" href="Maurrutia.vcf" download>
-      <img src="assets/user_icon.png" class="icon-wide" alt="" />
-      Save Contact
-    </a>
-
-    <!-- Call -->
-    <a class="btn call" href="tel:+50766541664">
-      <img src="assets/call_icon.jpg" alt="" />
-      Call
-    </a>
-
-    <!-- WhatsApp -->
-    <a class="btn whatsapp" href="https://wa.me/50766541664" target="_blank" rel="noopener">
-      <img src="assets/whatsapp_icon.png" alt="" />
-      WhatsApp
-    </a>
-
-    <!-- Email -->
-    <a class="btn email" href="mailto:mau@maurrutia.com">
-      <img src="assets/email_icon_white.png" class="icon-wide" alt="" />
-      Email
-    </a>
-
-    <!-- LinkedIn -->
-    <a class="btn linkedin" href="https://www.linkedin.com/in/miguel-%C3%A1ngel-urrutia-6468b936" target="_blank" rel="noopener">
-      <img src="assets/Linkedin_logo.png" alt="" />
-      LinkedIn
-    </a>
-
-    <!-- Footer -->
-    <div class="footer">
-      <a href="https://wa.me/50767317853" target="_blank" rel="noopener">Powered by Digital Cards Panama</a>
-    </div>
-
-  </div>
-
-  <script>
-    const photos = ["MAU.png", "MAU2.png", "MAU3.png"];
-    const selectedPhoto = photos[Math.floor(Math.random() * photos.length)];
-    document.getElementById("profilePhoto").src = selectedPhoto;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Miguel Ángel Urrutia — Certified Court and Conference Interpreter based in Panama City. Active since 1980 in legal, maritime, governmental, and international settings.">
+  <meta name="author" content="Miguel Ángel Urrutia">
+  <meta property="og:title" content="Miguel Ángel Urrutia | Conference Interpreter & Certified Court Interpreter">
+  <meta property="og:description" content="Senior conference and court interpreter based in Panama, trusted for legal, maritime, governmental, and international assignments since 1980.">
+  <meta property="og:image" content="Profile-current.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <title>Miguel Ángel Urrutia | Conference Interpreter &amp; Certified Court Interpreter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Miguel Ángel Urrutia",
+    "jobTitle": "Conference Interpreter & Certified Court Interpreter",
+    "description": "Senior conference and court interpreter based in Panama, trusted for legal, maritime, governmental, and international assignments since 1980.",
+    "url": "https://maurrutia.com",
+    "telephone": "+50766541664",
+    "email": "mau@maurrutia.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "PA", "addressLocality": "Panama City" },
+    "knowsLanguage": ["Spanish", "English", "French", "Portuguese"]
+  }
   </script>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo plaque — ivory capsule so navy/gold logo reads clearly -->
+      <a href="#hero" class="nav-brand" aria-label="Miguel Ángel Urrutia — home">
+        <div class="nav-plaque">
+          <img src="MAU-LOGO.png" alt="MAU" class="nav-logo">
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#about"     data-i18n="nav.about">About</a></li>
+        <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+        <li><a href="#timeline"  data-i18n="nav.timeline">Experience</a></li>
+        <li><a href="#remote"    data-i18n="nav.remote">Remote</a></li>
+        <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+          <button class="lang-btn is-active" data-lang="en" aria-pressed="true"  aria-label="Switch to English">EN</button>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <button class="lang-btn"           data-lang="es" aria-pressed="false" aria-label="Cambiar a Español">ES</button>
+        </div>
+        <button class="nav-toggle-btn" id="navToggle"
+          aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══ HERO ════════════════════════════════════════════════ -->
+    <section id="hero" aria-labelledby="hero-name">
+      <div class="hero-inner">
+
+        <div class="hero-photo-col">
+          <div class="hero-photo-wrap hero-anim hero-anim--photo">
+            <div class="hero-photo-frame">
+              <img
+                src="Profile-current.png"
+                alt="Miguel Ángel Urrutia, Conference Interpreter and Certified Court Interpreter, Panama"
+                width="420" height="420" loading="eager"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <p class="hero-eyebrow hero-anim hero-anim--1" data-i18n="hero.eyebrow">Certified Public Interpreter &nbsp;&middot;&nbsp; Panama City, Panama</p>
+          <h1 id="hero-name" class="hero-anim hero-anim--2">Miguel&nbsp;Ángel&nbsp;Urrutia</h1>
+          <div class="hero-gold-line hero-anim hero-anim--3" aria-hidden="true"></div>
+          <p class="hero-title hero-anim hero-anim--3b" data-i18n="hero.title">Conference Interpreter &amp; Certified Court Interpreter</p>
+          <p class="hero-statement hero-anim hero-anim--4" data-i18n="hero.statement">Senior conference and court interpreter based in Panama, trusted for legal, maritime, governmental, and international assignments since 1980.</p>
+          <div class="hero-ctas hero-anim hero-anim--5">
+            <a href="#contact" class="btn btn-navy"    data-i18n="hero.cta.contact">Contact Miguel</a>
+            <a href="MAU%20CV%20-%20ENG%20-%20JUN25%20HI-LITED%20FOR%20LAW%20ENFORZ.odt"
+               download="MAU CV - ENG - JUN25 HI-LITED FOR LAW ENFORZ.odt"
+               class="btn btn-outline" data-i18n="hero.cta.cv">Download CV</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Animated scroll cue -->
+      <div class="scroll-cue hero-anim hero-anim--6" aria-hidden="true">
+        <div class="scroll-cue-line"></div>
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L6 6.5L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ══ CREDENTIALS STRIP ═══════════════════════════════════ -->
+    <section id="credentials" aria-label="Professional credentials">
+      <div class="credentials-inner">
+        <div class="credential-item"><span class="cred-gem" aria-hidden="true"></span><span data-i18n="cred.1">Certified Public Interpreter</span></div>
+        <div class="credential-item"><span class="cred-gem" aria-hidden="true"></span><span data-i18n="cred.2">Spanish &amp; English A-Level &nbsp;&middot;&nbsp; AIIC</span></div>
+        <div class="credential-item"><span class="cred-gem" aria-hidden="true"></span><span data-i18n="cred.3">Maritime &amp; Legal Specialist</span></div>
+        <div class="credential-item"><span class="cred-gem" aria-hidden="true"></span><span data-i18n="cred.4">Remote Simultaneous Interpretation</span></div>
+        <div class="credential-item"><span class="cred-gem" aria-hidden="true"></span><span data-i18n="cred.5">Panama Canal &amp; International Conferences</span></div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ════════════════════════════════════════════════ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" aria-hidden="true">— Professional Profile</p>
+          <h2 id="about-heading" data-i18n="about.heading">About</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+        </div>
+        <div class="about-layout">
+          <div class="about-lead-col">
+            <div class="about-intro-panel reveal">
+              <p class="lead-text" data-i18n="about.lead">Miguel Ángel Urrutia is a Certified Public Interpreter based in Panama City, with a continuous professional record in legal, maritime, governmental, and conference interpretation since 1980.</p>
+            </div>
+          </div>
+          <div class="about-detail-col">
+            <p class="reveal" data-i18n="about.p1">Recognized by the Ministry of Government and Justice of the Republic of Panama (Resolution No. 290), he holds an A-level designation in Spanish and English per AIIC standards, with working knowledge of French and Portuguese. He is also a Licensed Seafarer under the Panama Maritime Authority.</p>
+            <p class="reveal" data-i18n="about.p2">He has served as lead interpreter for international conferences, arbitration hearings, and Board of Directors proceedings, and has coordinated interpreting teams for the World Bank Group and the Japan International Cooperation Agency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EXPERTISE ═══════════════════════════════════════════ -->
+    <section id="expertise" aria-labelledby="expertise-heading">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" aria-hidden="true">— Fields &amp; Domains</p>
+          <h2 id="expertise-heading" data-i18n="exp.heading">Areas of Expertise</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+        </div>
+        <div class="expertise-grid">
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">01</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.1.h">Legal &amp; Court Interpretation</h3>
+            <p data-i18n="exp.1.p">Court hearings, arbitration panels, depositions, and sworn proceedings — in Panama, the United States, and internationally.</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">02</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.2.h">Maritime &amp; Panama Canal</h3>
+            <p data-i18n="exp.2.p">Panama Canal Commission and Authority proceedings, maritime arbitration, port congresses, nuclear transport briefings, and engineering conferences.</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">03</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.3.h">Law Enforcement &amp; Security</h3>
+            <p data-i18n="exp.3.p">Training programs for ICITAP, INTERPOL, ILEA, the U.S. Southern Command, the Royal Canadian Mounted Police, and the National Crime Agency (UK).</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">04</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.4.h">Government &amp; International Organizations</h3>
+            <p data-i18n="exp.4.p">Diplomatic negotiations, OAS sessions, the World Economic Forum Latin America, and the FTAA/ALCA international trade negotiations process.</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">05</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.5.h">Medical &amp; Technical Conferences</h3>
+            <p data-i18n="exp.5.p">Major pharmaceutical symposia (Abbott, Merck, Roche, GSK, Bayer, Sanofi, BMS, Janssen), hospital equipment seminars, and engineering congresses including PIANC and AIRBUS.</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">06</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.6.h">Finance, Banking &amp; Tax</h3>
+            <p data-i18n="exp.6.p">LatAm Banking Federation, IMF and World Bank briefings, KPMG, PwC, BDO, and Grant Thornton tax law seminars, and ECLAC economic commission sessions.</p>
+          </article>
+          <article class="expertise-card reveal">
+            <span class="card-num" aria-hidden="true">07</span>
+            <div class="card-bar" aria-hidden="true"></div>
+            <h3 data-i18n="exp.7.h">Remote &amp; Hybrid Interpretation</h3>
+            <p data-i18n="exp.7.p">Over 18 years of remote simultaneous, hybrid, and fully decentralized conference interpretation, including live international television and certified RSI platforms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TIMELINE ═════════════════════════════════════════════ -->
+    <section id="timeline" aria-labelledby="timeline-heading">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" aria-hidden="true">— Since 1980</p>
+          <h2 id="timeline-heading" data-i18n="tl.heading">Career Highlights</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+        </div>
+        <ol class="timeline" role="list">
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.1.date">1980</span>
+              <h3 data-i18n="tl.1.h">U.S. Embassy — Commercial Section</h3>
+              <p data-i18n="tl.1.p">Began professional interpreting career at the United States Embassy in Panama, serving the Commercial Section and establishing a foundation in high-stakes bilateral interpretation.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.2.date">1988 – 1993</span>
+              <h3 data-i18n="tl.2.h">U.S. State Department — FBIS Monitor</h3>
+              <p data-i18n="tl.2.p">Latin America and Caribbean monitor for the Foreign Broadcast Information Service, a U.S. State Department information monitoring unit handling sensitive regional reporting.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.3.date">1993</span>
+              <h3 data-i18n="tl.3.h">Certified Public Interpreter</h3>
+              <p data-i18n="tl.3.p">Granted official certification as Certified Public Interpreter (Spanish/English) by the Ministry of Government and Justice of the Republic of Panama, Resolution No. 290.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.4.date">1998 – 2003</span>
+              <h3 data-i18n="tl.4.h">Panama Canal Commission / Panama Canal Authority</h3>
+              <p data-i18n="tl.4.p">Lead interpreter for the Language Services Branch. Covered arbitration hearings, accident investigations, Board of Directors meetings, and court interpretation for investigative proceedings — in-country and abroad.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.5.date">2001 – 2003</span>
+              <h3 data-i18n="tl.5.h">FTAA / ALCA Negotiations</h3>
+              <p data-i18n="tl.5.p">Conference interpreter for the Free Trade Area of the Americas international trade negotiations among member states — authorized by a panel of AIIC senior interpreters and the FTAA Chief Interpreter.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.6.date">Ongoing</span>
+              <h3 data-i18n="tl.6.h">International Courts, Law Enforcement &amp; Conferences</h3>
+              <p data-i18n="tl.6.p">Court interpretation for the Miami Maritime Arbitration Council, the U.S. Federal Court, and Panama Maritime Court. Conference interpretation for the World Bank, INTERPOL, the Royal Canadian Mounted Police, NCA (UK), the OAS, and leading industry congresses worldwide.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.7.date">Live Television</span>
+              <h3 data-i18n="tl.7.h">MEDCOM — International Broadcast Interpretation</h3>
+              <p data-i18n="tl.7.p">Live media interpretation for MEDCOM Panama: COP26 Conference of the Parties, multiple Academy Awards ceremonies, Miss Universe, and Miss World broadcasts.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-left">
+            <div class="tl-marker" aria-hidden="true"><div class="tl-dot"></div></div>
+            <div class="tl-card">
+              <span class="tl-date" data-i18n="tl.8.date">2021 – 2024</span>
+              <h3 data-i18n="tl.8.h">Legal Affairs Committee — APTI</h3>
+              <p data-i18n="tl.8.p">Member of the Legal Affairs Committee of the Panamanian Association of Translators and Interpreters (APTI).</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ══ REMOTE INTERPRETATION ════════════════════════════════ -->
+    <section id="remote" aria-labelledby="remote-heading">
+      <!-- Interpreting.png as cinematic background -->
+      <div class="remote-scene" aria-hidden="true">
+        <img src="Interpreting.png" alt="" role="presentation" loading="lazy" id="remoteBgImg">
+      </div>
+      <div class="remote-veil" aria-hidden="true"></div>
+      <div class="section-inner remote-content">
+        <div class="section-header section-header--light reveal">
+          <p class="section-eyebrow section-eyebrow--light" aria-hidden="true">— 18+ Years</p>
+          <h2 id="remote-heading" data-i18n="rem.heading">Remote &amp; Hybrid Interpretation</h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+        </div>
+        <p class="remote-lead reveal" data-i18n="rem.lead">Over 18 years delivering interpretation in every remote and hybrid format — long before remote interpretation became standard practice in the profession.</p>
+        <div class="remote-grid">
+          <div class="remote-card reveal">
+            <span class="remote-card-num" aria-hidden="true">I</span>
+            <span class="remote-card-title" data-i18n="rem.1.title">Conference Calls</span>
+            <p data-i18n="rem.1.p">On-site interpretation of telephone presentations from remote participants, into and from a second language.</p>
+          </div>
+          <div class="remote-card reveal">
+            <span class="remote-card-num" aria-hidden="true">II</span>
+            <span class="remote-card-title" data-i18n="rem.2.title">Videoconferences</span>
+            <p data-i18n="rem.2.p">Live interpretation of multi-speaker video sessions for centralized audiences across broadcast and enterprise platforms.</p>
+          </div>
+          <div class="remote-card reveal">
+            <span class="remote-card-num" aria-hidden="true">III</span>
+            <span class="remote-card-title" data-i18n="rem.3.title">Remote Simultaneous Interpretation</span>
+            <p data-i18n="rem.3.p">Fully remote delivery for centralized conferences — interpreter off-site, audience and speakers on location.</p>
+          </div>
+          <div class="remote-card reveal">
+            <span class="remote-card-num" aria-hidden="true">IV</span>
+            <span class="remote-card-title" data-i18n="rem.4.title">Fully Decentralized RSI</span>
+            <p data-i18n="rem.4.p">All participants remote — interpreting conferences where every attendee, speaker, and interpreter is in a separate location.</p>
+          </div>
+        </div>
+        <div class="kudo-note reveal" data-i18n="rem.kudo"><strong>Kudo Certified Interpreter</strong> — certified in the use of the Kudoway RSI platform. Extensive experience advising organizers, virtual meeting hosts, speakers, and attendees on remote conference best practices and technical preparation.</div>
+      </div>
+    </section>
+
+    <!-- ══ LEGACY ════════════════════════════════════════════════ -->
+    <section id="legacy" aria-labelledby="legacy-heading">
+      <div class="section-inner legacy-inner">
+        <div class="legacy-photo-col reveal">
+          <div class="legacy-photo-frame">
+            <img src="Profile-young.png"
+              alt="Miguel Ángel Urrutia — earlier in his career"
+              width="380" height="380" loading="lazy">
+          </div>
+        </div>
+        <div class="legacy-text">
+          <div class="section-header reveal">
+            <p class="section-eyebrow" aria-hidden="true">— Est. 1980</p>
+            <h2 id="legacy-heading" data-i18n="leg.heading">A Career Built Over Decades</h2>
+            <div class="gold-rule" aria-hidden="true"></div>
+          </div>
+          <blockquote class="legacy-quote reveal" data-i18n="leg.quote">&#8220;A career built over decades of trust, precision, and discretion.&#8221;</blockquote>
+          <p class="reveal" data-i18n="leg.p1">From the commercial offices of the U.S. Embassy in 1980 to international maritime arbitration, live television interpretation, and fully remote simultaneous conferences — Miguel Ángel Urrutia has worked at the intersection of language, law, and commerce for over four decades.</p>
+          <p class="reveal" data-i18n="leg.p2">His record reflects not only linguistic fluency, but the professional judgement, subject-matter depth, and personal discretion that sensitive international work demands. He has coordinated interpreting teams for the World Bank Group and the Japan International Cooperation Agency, completed AIIC professional development in 2023, and served institutions on five continents.</p>
+          <p class="reveal" data-i18n="leg.p3">This is a career defined not by volume, but by the calibre of assignments, the trust of repeat clients, and an unbroken standard of quality since 1980.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══════════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-top reveal">
+        <div class="section-inner">
+          <div class="section-header">
+            <p class="section-eyebrow section-eyebrow--light" aria-hidden="true">— Get in Touch</p>
+            <h2 id="contact-heading" data-i18n="con.heading">Contact</h2>
+            <div class="gold-rule" aria-hidden="true"></div>
+          </div>
+          <p class="contact-intro" data-i18n="con.intro">Available for conference assignments, legal proceedings, remote interpretation, and team coordination — nationally and internationally.</p>
+        </div>
+      </div>
+      <div class="contact-body">
+        <div class="section-inner contact-grid">
+          <div class="contact-info-col reveal">
+            <p>
+              <span class="contact-label" data-i18n="con.label.email">Email</span>
+              <a href="mailto:mau@maurrutia.com">mau@maurrutia.com</a>
+            </p>
+            <p>
+              <span class="contact-label" data-i18n="con.label.phone">Telephone</span>
+              <a href="tel:+50766541664">+507 6654-1664</a>
+            </p>
+            <p>
+              <span class="contact-label" data-i18n="con.label.web">Website</span>
+              <a href="https://maurrutia.com" target="_blank" rel="noopener noreferrer">maurrutia.com</a>
+            </p>
+          </div>
+          <div class="contact-cta-col reveal">
+            <a href="mailto:mau@maurrutia.com" class="btn btn-gold"    data-i18n="con.btn.email">Send an Email</a>
+            <a href="tel:+50766541664"          class="btn btn-ghost"   data-i18n="con.btn.call">Call: +507 6654-1664</a>
+            <a href="https://wa.me/50766541664" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-i18n="con.btn.wa">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap" aria-hidden="true">
+        <div class="footer-plaque">
+          <img src="MAU-LOGO.png" alt="" class="footer-logo-img">
+        </div>
+      </div>
+      <div class="footer-name">Miguel Ángel Urrutia</div>
+      <div class="footer-title" data-i18n="foot.title">Conference Interpreter &amp; Consultant &nbsp;&middot;&nbsp; Panama</div>
+      <div class="footer-credit" data-i18n="foot.credit">Website by Digital Cards Panama</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
