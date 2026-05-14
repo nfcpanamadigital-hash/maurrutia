@@ -359,7 +359,7 @@ ul, ol { list-style: none; }
 }
 .hero-content h1 {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 8.5vw, 5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   font-weight: 700; line-height: 1.06;
   color: var(--navy);
   letter-spacing: 0.01em;
@@ -789,11 +789,12 @@ ul, ol { list-style: none; }
 }
 
 @media (min-width: 860px) {
-  /* Hero two-column */
-  .hero-inner            { grid-template-columns: 1fr 1.45fr; gap: clamp(3rem, 6vw, 5rem); }
+  /* Hero two-column — smaller photo, wider text col so name fits one line */
+  .hero-inner            { grid-template-columns: 0.65fr 1.7fr; gap: clamp(2.5rem, 5vw, 4rem); }
   .hero-photo-col        { justify-content: flex-end; }
-  .hero-photo-frame img  { max-width: 400px; }
+  .hero-photo-frame img  { max-width: 250px; }
   .hero-content          { text-align: left; }
+  .hero-content h1       { white-space: nowrap; }
   .hero-gold-line        { margin-left: 0; transform-origin: left center; }
   .hero-statement        { margin-left: 0; margin-right: 0; }
   .hero-ctas             { justify-content: flex-start; }
@@ -862,7 +863,7 @@ ul, ol { list-style: none; }
     gap: 1.5rem;
   }
   /* Cap portrait so it doesn't eat the whole screen */
-  .hero-photo-frame img { max-width: 230px; }
+  .hero-photo-frame img { max-width: 190px; }
   /* Pull decorative rings in so they don't clip viewport edges */
   .hero-photo-frame::before { top:-10px; left:-10px; right:-10px; bottom:-10px; }
   .hero-photo-frame::after  { top:-20px; left:-20px; right:-20px; bottom:-20px; }
