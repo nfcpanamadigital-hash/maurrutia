@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nfcpanamadigital-hash.github.io/maurrutia/sitemap.xml
